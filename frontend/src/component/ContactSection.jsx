@@ -49,6 +49,19 @@ export default function ContactSection() {
     setIsSubmitting(false);
   };
 
+  const handleScheduleCall = () => {
+    // Scroll to contact form
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleViewProjects = () => {
+    // Scroll to projects section
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div id="contact" className="contact-section">
       <div className="container">
@@ -224,6 +237,21 @@ export default function ContactSection() {
                 </div>
               )}
             </form>
+          </div>
+        </div>
+        
+        <div className="cta-banner">
+          <div className="cta-content">
+            <h3>Ready to Build Something Amazing?</h3>
+            <p>Join our satisfied clients who've transformed their ideas into successful digital products.</p>
+            <div className="cta-buttons">
+              <button className="cta-btn primary" onClick={handleScheduleCall}>
+                Schedule a Call
+              </button>
+              <button className="cta-btn secondary" onClick={handleViewProjects}>
+                View More Projects
+              </button>
+            </div>
           </div>
         </div>
       </div>

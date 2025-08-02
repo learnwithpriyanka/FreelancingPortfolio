@@ -4,7 +4,7 @@ export default function TeamMembers() {
   const teamMembers = [
     {
       id: 1,
-      name: "Alex Chen",
+      name: "Rohit kumar",
       role: "Frontend Developer",
       skills: ["React", "Next.js", "Tailwind CSS", "TypeScript", "UI/UX"],
       experience: "5+ years",
@@ -13,29 +13,29 @@ export default function TeamMembers() {
     },
     {
       id: 2,
-      name: "Sarah Johnson",
+      name: "Navnit kumar",
       role: "Backend Developer",
       skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"],
       experience: "6+ years",
-      image: "https://readdy.ai/api/search-image?query=Professional%20backend%20developer%20portrait%2C%20confident%20female%20software%20engineer%2C%20clean%20studio%20lighting%2C%20modern%20business%20attire%2C%20tech%20professional%20headshot%20with%20friendly%20expression&width=400&height=400&seq=sarah1&orientation=squarish",
+      image: "images/navnit.jpg",
       description: "Building robust, scalable server architectures. Expert in API design, database optimization, and system performance."
     },
     {
       id: 3,
-      name: "Marcus Williams",
+      name: "Sayani Datta",
       role: "Mobile App Developer", 
       skills: ["Flutter", "Firebase", "Dart", "iOS", "Android"],
       experience: "4+ years",
-      image: "https://readdy.ai/api/search-image?query=Professional%20mobile%20app%20developer%20portrait%2C%20African%20American%20male%20software%20engineer%2C%20clean%20studio%20lighting%2C%20modern%20casual%20attire%2C%20tech%20professional%20headshot%20with%20warm%20smile&width=400&height=400&seq=marcus1&orientation=squarish",
+      image: "images/sayani.jpg",
       description: "Creating seamless cross-platform mobile experiences. Focused on performance optimization and native-feel applications."
     },
     {
       id: 4,
-      name: "Emma Rodriguez",
+      name: "Priyanka kumari",
       role: "DevOps Engineer",
       skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"],
       experience: "7+ years",
-      image: "https://readdy.ai/api/search-image?query=Professional%20DevOps%20engineer%20portrait%2C%20Hispanic%20female%20tech%20professional%2C%20clean%20studio%20lighting%2C%20modern%20business%20casual%20attire%2C%20confident%20tech%20expert%20headshot&width=400&height=400&seq=emma1&orientation=squarish",
+      image: "images/priyanka.jpg",
       description: "Ensuring smooth deployments and reliable infrastructure. Specializes in cloud architecture and automated deployment pipelines."
     }
   ];
@@ -60,7 +60,7 @@ export default function TeamMembers() {
                 <div className="member-details">
                   <h3>{member.name}</h3>
                   <h4>{member.role}</h4>
-                  <p>{member.description}</p>
+                  {/* <p>{member.description}</p> */}
                   
                   <div className="member-stats">
                     <span className="experience">{member.experience}</span>

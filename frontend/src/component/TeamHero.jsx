@@ -1,6 +1,20 @@
 import './TeamHero.css';
 
 export default function TeamHero() {
+
+  const StartYourProject = () => {
+    // Scroll to contact form
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleViewProjects = () => {
+    // Scroll to projects section
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div id="hero" className="team-hero">
       <div className="hero-container">
@@ -51,8 +65,16 @@ export default function TeamHero() {
         </div>
         
         <div className="hero-actions">
-          <button className="btn-primary">Start Your Project</button>
-          <button className="btn-secondary">View Our Work</button>
+          
+
+          
+              <button className="btn primary" onClick={StartYourProject}>
+              Start Your Project
+              </button>
+              <button className="btn secondary" onClick={handleViewProjects}>
+              View Our Work
+              </button>
+           
         </div>
       </div>
     </div>
