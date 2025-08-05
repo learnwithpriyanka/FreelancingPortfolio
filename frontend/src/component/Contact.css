@@ -1,11 +1,14 @@
-.contact-section {
+.contact-section1 {
   padding: clamp(3rem, 6vh, 4rem) 0;
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   position: relative;
   overflow: hidden;
+  
+  
+  
 }
 
-.contact-section::before {
+.contact-section1::before {
   content: '';
   position: absolute;
   top: 0;
@@ -47,6 +50,7 @@
   margin: 0 auto;
   line-height: 1.6;
   font-weight: 400;
+  
 }
 
 .contact-content {

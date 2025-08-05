@@ -5,6 +5,7 @@ import ProjectShowcase from './component/ProjectShowcase';
 import WorkProcess from './component/WorkProcess';
 import ContactSection from './component/ContactSection';
 import './App.css';
+import PricingSection from './component/PricingSection';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <main>
         <TeamHero />
+        <PricingSection/>
         <TeamMembers />
         <ProjectShowcase />
         <WorkProcess />

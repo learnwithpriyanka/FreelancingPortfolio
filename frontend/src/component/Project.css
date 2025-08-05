@@ -3,6 +3,7 @@
   background: white;
   position: relative;
   overflow: hidden;
+  margin-right: -70px;
 }
 
 .project-showcase::before {
