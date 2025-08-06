@@ -4,41 +4,53 @@ export default function TeamMembers() {
   const teamMembers = [
     {
       id: 1,
-      name: "Rohit kumar",
-      role: "Frontend Developer",
-      skills: ["React", "Next.js", "Tailwind CSS", "TypeScript", "UI/UX"],
-      experience: "5+ years",
-      image: "https://readdy.ai/api/search-image?query=Professional%20frontend%20developer%20portrait%2C%20young%20Asian%20male%20software%20engineer%2C%20clean%20studio%20lighting%2C%20modern%20business%20casual%20attire%2C%20confident%20expression%2C%20tech%20professional%20headshot&width=400&height=400&seq=alex1&orientation=squarish",
-      description: "Crafting beautiful, responsive interfaces that users love. Specialized in modern React ecosystems and pixel-perfect implementations."
+      name: "Rohit kumar singh",
+      role: "Backend Developer",
+      skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"],
+
+      experience: "3+ years",
+      image: "images/rohit.jpg",
+      description: "Building robust, scalable server architectures. Expert in API design, database optimization, and system performance."
     },
     {
       id: 2,
       name: "Navnit kumar",
-      role: "Backend Developer",
-      skills: ["Node.js", "Express", "MongoDB", "PostgreSQL", "GraphQL"],
-      experience: "6+ years",
+      role: "Frontend Developer",
+      skills: ["React", "Next.js", "Tailwind CSS", "TypeScript", "UI/UX"],
+
+      experience: "2+ years",
       image: "images/navnit.jpg",
-      description: "Building robust, scalable server architectures. Expert in API design, database optimization, and system performance."
+      description: "Crafting beautiful, responsive interfaces that users love. Specialized in modern React ecosystems and pixel-perfect implementations."
+
     },
     {
       id: 3,
       name: "Sayani Datta",
       role: "Mobile App Developer", 
       skills: ["Flutter", "Firebase", "Dart", "iOS", "Android"],
-      experience: "4+ years",
+      experience: "2+ years",
       image: "images/sayani.jpg",
       description: "Creating seamless cross-platform mobile experiences. Focused on performance optimization and native-feel applications."
     },
     {
       id: 4,
       name: "Priyanka kumari",
-      role: "DevOps Engineer",
+      role: "DevOps Engineer && Tester",
       skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"],
-      experience: "7+ years",
+      experience: "2+ years",
       image: "images/priyanka.jpg",
       description: "Ensuring smooth deployments and reliable infrastructure. Specializes in cloud architecture and automated deployment pipelines."
-    }
-  ];
+    },
+  {
+  id: 5,
+  name: "Raushan kumar",
+  role: " Debuger",
+  skills: ["Postman", "Docker", "Kubernetes", "CI/CD", "Terraform"],
+  experience: "2+ years",
+  image: "images/raushan.jpg",
+  description: "Ensuring smooth deployments and reliable infrastructure. Specializes in cloud architecture and automated deployment pipelines."
+}
+];
 
   return (
     <div id="team" className="team-members">

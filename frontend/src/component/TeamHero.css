@@ -11,6 +11,8 @@
   padding: 2rem 0;
   color: #333;
   overflow: hidden;
+  margin-top: -10px;
+  margin-right: -70px;
 }
 
 .team-hero::before {
@@ -38,6 +40,7 @@
 }
 
 .hero-title {
+  padding-top: 1.8rem;
   font-size: clamp(2.5rem, 6vw, 3.5rem);
   font-weight: 800;
   margin-bottom: 1.5rem;

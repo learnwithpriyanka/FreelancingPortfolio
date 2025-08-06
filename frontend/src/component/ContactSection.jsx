@@ -63,7 +63,7 @@ export default function ContactSection() {
   };
 
   return (
-    <div id="contact" className="contact-section">
+    <div id="contact" className="contact-section1">
       <div className="container">
         <div className="section-header">
           <h2>Ready to Start Your Project?</h2>
