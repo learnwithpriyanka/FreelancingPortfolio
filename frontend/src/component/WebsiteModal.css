@@ -1,0 +1,413 @@
+/* Website Modal Overlay */
+.website-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  animation: fadeIn 0.3s ease-out forwards;
+  box-sizing: border-box;
+}
+
+/* Modal Content Container */
+.website-modal-content {
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: min(95vw, 1200px);
+  max-height: min(90vh, 800px);
+  width: 100%;
+  height: min(600px, 70vh);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transform: scale(0.9);
+  animation: modalIn 0.3s ease-out 0.1s forwards;
+  box-sizing: border-box;
+}
+
+/* Modal Header */
+.website-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  background: #fafafa;
+  border-radius: 16px 16px 0 0;
+  flex-shrink: 0;
+}
+
+.website-modal-title {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1e293b;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Close Button */
+.website-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #64748b;
+  transition: all 0.2s ease;
+  padding: 0;
+  font-size: 0;
+}
+
+.website-modal-close:hover {
+  background: #ef4444;
+  border-color: #dc2626;
+  color: white;
+  transform: scale(1.05);
+}
+
+.website-modal-close:active {
+  transform: scale(0.95);
+}
+
+/* Modal Body */
+
+/* Modal Body: no scroll, contains scrollable iframe wrapper */
+.website-modal-body {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 0 0 16px 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollable iframe wrapper */
+.website-modal-iframe-wrapper {
+  flex: 1;
+  overflow: auto;
+  border-radius: 0 0 16px 16px;
+  background: #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.website-modal-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+  z-index: 1;
+}
+
+/* Iframe Styling */
+.website-modal-iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0 0 16px 16px;
+  background: #ffffff;
+  display: block;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalIn {
+  from {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .website-modal-overlay {
+    padding: 10px;
+    align-items: flex-start;
+    padding-top: max(10px, env(safe-area-inset-top, 10px));
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 10px));
+  }
+  
+  .website-modal-content {
+    height: calc(100vh - 40px);
+    max-height: calc(100vh - 40px);
+    min-height: 400px;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+  
+  .website-modal-header {
+    padding: 14px 18px 10px;
+    border-radius: 12px 12px 0 0;
+    flex-shrink: 0;
+  }
+  
+  .website-modal-title {
+    font-size: 1rem;
+  }
+  
+  .website-modal-close {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+  }
+  
+  .website-modal-body {
+    border-radius: 0 0 12px 12px;
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .website-modal-iframe-wrapper {
+    flex: 1;
+    overflow: auto;
+    border-radius: 0 0 12px 12px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  .website-modal-iframe-wrapper iframe {
+    border-radius: 0 0 12px 12px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .website-modal-overlay {
+    padding: 5px;
+    padding-top: max(5px, env(safe-area-inset-top, 5px));
+    padding-bottom: max(5px, env(safe-area-inset-bottom, 5px));
+  }
+  
+  .website-modal-content {
+    height: calc(100vh - 20px);
+    max-height: calc(100vh - 20px);
+    min-height: 350px;
+    border-radius: 10px;
+    margin-top: 5px;
+  }
+  
+  .website-modal-header {
+    padding: 12px 14px 8px;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .website-modal-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .website-modal-close {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .website-modal-close svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .website-modal-body {
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .website-modal-iframe-wrapper {
+    flex: 1;
+    overflow: auto;
+    border-radius: 0 0 10px 10px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  .website-modal-iframe-wrapper iframe {
+    border-radius: 0 0 10px 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+/* Extra small screens (very small phones) */
+@media (max-width: 360px) {
+  .website-modal-overlay {
+    padding: 3px;
+    padding-top: max(3px, env(safe-area-inset-top, 3px));
+    padding-bottom: max(3px, env(safe-area-inset-bottom, 3px));
+  }
+  
+  .website-modal-content {
+    height: calc(100vh - 12px);
+    max-height: calc(100vh - 12px);
+    min-height: 320px;
+    border-radius: 8px;
+    margin-top: 3px;
+  }
+  
+  .website-modal-header {
+    padding: 10px 12px 6px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .website-modal-title {
+    font-size: 0.85rem;
+  }
+  
+  .website-modal-close {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .website-modal-body {
+    border-radius: 0 0 8px 8px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .website-modal-iframe-wrapper {
+    flex: 1;
+    overflow: auto;
+    border-radius: 0 0 8px 8px;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+  }
+  .website-modal-iframe-wrapper iframe {
+    border-radius: 0 0 8px 8px;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+}
+
+/* Loading State */
+.website-modal-content iframe[src=""] {
+  background: #f8fafc url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2'%3E%3Cpath d='M21 12c0 5-4 9-9 9s-9-4-9-9 4-9 9-9c5 0 9 4 9 9z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E") center center no-repeat;
+  background-size: 40px 40px;
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .website-modal-content {
+    background: #1e293b;
+    box-shadow: 
+      0 25px 50px -12px rgba(0, 0, 0, 0.5),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  .website-modal-header {
+    background: #334155;
+    border-bottom-color: #475569;
+  }
+  
+  .website-modal-title {
+    color: #f1f5f9;
+  }
+  
+  .website-modal-close {
+    background: #475569;
+    border-color: #64748b;
+    color: #cbd5e1;
+  }
+  
+  .website-modal-close:hover {
+    background: #ef4444;
+    border-color: #dc2626;
+    color: white;
+  }
+}
+
+/* Focus Styles for Accessibility */
+.website-modal-close:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Smooth Transitions */
+.website-modal-content,
+.website-modal-close,
+.website-modal-overlay {
+  transition: all 0.2s ease;
+}
+
+/* Mobile-specific optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .website-modal-close:hover {
+    background: #f8fafc;
+    border-color: #e2e8f0;
+    color: #64748b;
+    transform: none;
+  }
+  
+  .website-modal-close:active {
+    background: #ef4444;
+    border-color: #dc2626;
+    color: white;
+    transform: scale(0.95);
+  }
+}
+
+/* Ensure proper touch handling */
+@media (pointer: coarse) {
+  .website-modal-close {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Viewport meta fix for mobile browsers */
+@supports (-webkit-touch-callout: none) {
+  .website-modal-content {
+    max-height: calc(100vh - 40px);
+  }
+  
+  @media (max-width: 480px) {
+    .website-modal-content {
+      max-height: calc(100vh - 20px);
+    }
+  }
+  
+  @media (max-width: 360px) {
+    .website-modal-content {
+      max-height: calc(100vh - 12px);
+    }
+  }
+}

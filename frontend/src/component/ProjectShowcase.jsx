@@ -1,8 +1,11 @@
 'use client';
 
 import './Project.css';
+import { useState } from 'react';
+import WebsiteModal from './WebsiteModal';
 
 export default function ProjectShowcase() {
+  const [modalUrl, setModalUrl] = useState(null);
   const projects = [
     {
       id: 1,
@@ -67,7 +70,6 @@ export default function ProjectShowcase() {
           <h2>Our Project Portfolio</h2>
           <p>From client projects to hackathon winners, we've delivered diverse solutions across industries with consistent excellence.</p>
         </div>
-        
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
@@ -77,11 +79,9 @@ export default function ProjectShowcase() {
                   {project.category}
                 </div>
               </div>
-              
               <div className="project-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
-                
                 <div className="project-technologies">
                   {project.technologies.map((tech, index) => (
                     <span key={index} className="tech-tag">
@@ -89,7 +89,6 @@ export default function ProjectShowcase() {
                     </span>
                   ))}
                 </div>
-                
                 <div className="project-results">
                   <h4>Key Results</h4>
                   <ul>
@@ -100,10 +99,15 @@ export default function ProjectShowcase() {
                     ))}
                   </ul>
                 </div>
+                {/* Example: Add a View Website button for the first project only. Replace with your real URLs as needed. */}
+                {project.id === 1 && (
+                  <button className="btn primary" style={{marginTop: '1rem'}} onClick={() => setModalUrl('https://padhaixpress.in')}>View Website</button>
+                )}
               </div>
             </div>
           ))}
         </div>
+        <WebsiteModal url={modalUrl} open={!!modalUrl} onClose={() => setModalUrl(null)} />
       </div>
     </div>
   );
