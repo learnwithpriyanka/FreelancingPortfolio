@@ -407,6 +407,46 @@ html, body {
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
+.success-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44, 62, 80, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.success-modal .modal-content {
+  background: #fff;
+  border-radius: 1.2rem;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 4px 24px 0 rgba(44, 62, 80, 0.12);
+  text-align: center;
+}
+
+.success-modal h4 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #232533;
+  margin-bottom: 0.7rem;
+}
+
+.success-modal p {
+  color: #232533;
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.success-modal button {
+  background: #4f6cf7;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.9rem 2.2rem;
+}
+
+
 /* Animations */
 @keyframes fadeInUp {
   from {

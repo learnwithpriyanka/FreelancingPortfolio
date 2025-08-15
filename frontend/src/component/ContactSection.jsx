@@ -16,6 +16,7 @@ export default function ContactSection() {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -28,6 +29,7 @@ export default function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage('');
+    setShowSuccessModal(false);
     
     try {
       // Send data to backend
@@ -43,6 +45,7 @@ export default function ContactSection() {
 
       if (response.ok && result.success) {
         setSubmitMessage(result.message);
+        setShowSuccessModal(true);
         // Reset form on success
         setFormData({
           name: '', 
@@ -53,6 +56,8 @@ export default function ContactSection() {
           timeline: '', 
           description: ''
         });
+        // Auto-hide modal after 4 seconds
+        setTimeout(() => setShowSuccessModal(false), 4000);
       } else {
         setSubmitMessage(result.message || 'Something went wrong. Please try again.');
       }
@@ -62,6 +67,11 @@ export default function ContactSection() {
     }
     
     setIsSubmitting(false);
+  };
+
+  const closeSuccessModal = () => {
+    setShowSuccessModal(false);
+    setSubmitMessage('');
   };
 
   const handleScheduleCall = () => {
@@ -299,10 +309,9 @@ export default function ContactSection() {
                   )}
                 </button>
                 
-                {submitMessage && (
-                  <div className={`submit-message ${
-                    submitMessage.includes('Thank you') ? 'success' : 'error'
-                  }`}>
+                {/* Show error messages inline */}
+                {submitMessage && !showSuccessModal && (
+                  <div className="submit-message error">
                     {submitMessage}
                   </div>
                 )}
@@ -337,6 +346,22 @@ export default function ContactSection() {
           </div>
         </div>
       </div>
+
+      {/* Success Modal */}
+      {showSuccessModal && (
+        <div className="success-modal">
+          <div className="modal-content">
+            <h4>Message Sent!</h4>
+            <p>Thank you for reaching out! I'll get back to you within 24 hours.</p>
+            <button
+              onClick={closeSuccessModal}
+              className="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 py-2 rounded-full hover:bg-green-600 hover:bg-emerald-600 transition-all duration-300 cursor-pointer"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
