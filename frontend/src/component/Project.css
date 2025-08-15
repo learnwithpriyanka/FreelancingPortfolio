@@ -1,9 +1,9 @@
 .project-showcase {
-  padding: clamp(4rem, 8vh, 6rem) 0;
+  padding: clamp(4rem, 8vh, 6rem) 2rem;
   background: white;
   position: relative;
   overflow: hidden;
-  margin-right: -70px;
+  width: 100%;
 }
 
 .project-showcase::before {

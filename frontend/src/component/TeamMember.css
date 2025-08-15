@@ -1,9 +1,8 @@
 .team-members {
-  padding: clamp(3rem, 6vh, 4rem) 0;
+  padding: clamp(3rem, 6vh, 4rem) 2rem;
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
-  margin-right: -70px;
 }
 
 .team-members::before {

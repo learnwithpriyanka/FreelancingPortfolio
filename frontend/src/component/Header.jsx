@@ -55,7 +55,7 @@ const Header = () => {
         <div className="logo">
           <button onClick={() => scrollToSection('hero')} className="logo-button">
             <div className="logo-icon">🚀</div>
-            <h1>Group Freelancing</h1>
+            <h1>Rapid Stack</h1>
           </button>
         </div>
         
