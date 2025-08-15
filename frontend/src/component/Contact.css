@@ -3,9 +3,8 @@
   background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   position: relative;
   overflow: hidden;
-  
-  
-  
+  margin: 0;
+  width: 100%;
 }
 
 .contact-section1::before {
@@ -26,12 +25,15 @@
   padding: 0 clamp(1rem, 3vw, 2rem);
   position: relative;
   z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .section-header {
   text-align: center;
   margin-bottom: clamp(2rem, 4vh, 3rem);
   animation: fadeInUp 1s ease-out;
+  width: 100%;
 }
 
 .section-header h2 {
@@ -50,7 +52,6 @@
   margin: 0 auto;
   line-height: 1.6;
   font-weight: 400;
-  
 }
 
 .contact-content {
@@ -59,6 +60,7 @@
   gap: clamp(2rem, 4vw, 3rem);
   align-items: start;
   margin-bottom: clamp(3rem, 6vh, 4rem);
+  width: 100%;
 }
 
 .contact-info h3 {
@@ -74,6 +76,7 @@
   flex-direction: column;
   gap: 1rem;
   margin-bottom: 2rem;
+  width: 100%;
 }
 
 .benefit-item {
@@ -86,6 +89,8 @@
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   transition: all 0.3s ease;
   border: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .benefit-item:hover {
@@ -120,6 +125,8 @@
   border-radius: 16px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-details h4 {
@@ -136,6 +143,7 @@
   margin-bottom: 0.75rem;
   padding: 0.5rem 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .contact-item:last-child {
@@ -163,6 +171,8 @@
   border: 1px solid rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contact-form::before {
@@ -178,12 +188,14 @@
 
 .form-group {
   margin-bottom: 1.5rem;
+  width: 100%;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  width: 100%;
 }
 
 .form-group label {
@@ -206,6 +218,7 @@
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: white;
   color: #333;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -243,6 +256,7 @@
   letter-spacing: 0.02em;
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .submit-btn::before {
@@ -279,6 +293,8 @@
   font-weight: 500;
   font-size: clamp(0.8rem, 1.2vw, 0.9rem);
   animation: fadeInUp 0.5s ease-out;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .submit-message.success {
@@ -305,6 +321,8 @@
   position: relative;
   overflow: hidden;
   animation: fadeInUp 1s ease-out 0.3s both;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cta-banner::before {
@@ -322,6 +340,7 @@
 .cta-content {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .cta-banner h3 {
@@ -348,6 +367,7 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .cta-btn {
@@ -360,6 +380,7 @@
   letter-spacing: 0.02em;
   border: 2px solid transparent;
   min-width: 140px;
+  box-sizing: border-box;
 }
 
 .cta-btn.primary {
@@ -447,7 +468,7 @@
 
 /* Mobile responsive */
 @media (max-width: 767px) {
-  .contact-section {
+  .contact-section1 {
     padding: 2.5rem 0;
   }
   
@@ -503,7 +524,7 @@
 }
 
 @media (max-width: 480px) {
-  .contact-section {
+  .contact-section1 {
     padding: 2rem 0;
   }
   
