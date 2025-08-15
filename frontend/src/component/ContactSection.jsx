@@ -75,15 +75,15 @@ export default function ContactSection() {
   };
 
   const handleScheduleCall = () => {
-    const contactForm = document.querySelector('form');
-    if (contactForm) {
-      contactForm.scrollIntoView({ behavior: 'smooth' });
-    }
+    // Direct call to the phone number
+    window.location.href = 'tel:7667761697';
   };
 
   const handleViewProjects = () => {
-    // This would typically scroll to projects section
-    console.log('View projects clicked');
+    // Open WhatsApp with the phone number
+    const message = "Hi! I'd like to discuss a project with you.";
+    const whatsappUrl = `https://wa.me/917667761697?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
   };
 
   const benefits = [
@@ -334,13 +334,13 @@ export default function ContactSection() {
                 onClick={handleScheduleCall}
                 className="cta-button primary"
               >
-                Schedule a Call
+                DIrect call
               </button>
               <button 
                 onClick={handleViewProjects}
                 className="cta-button secondary"
               >
-                View More Projects
+                WhatsApp massage
               </button>
             </div>
           </div>

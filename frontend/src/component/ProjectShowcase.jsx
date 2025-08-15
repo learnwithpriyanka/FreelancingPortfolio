@@ -18,12 +18,12 @@ export default function ProjectShowcase() {
     },
     {
       id: 2,
-      title: "TaskFlow Mobile App",
-      category: "Cross-Platform Mobile App",
-      description: "Project management mobile application built with Flutter. Includes real-time collaboration, file sharing, push notifications, and offline functionality with Firebase backend.",
-      technologies: ["Flutter", "Firebase", "Push Notifications", "Offline Sync"],
+      title: "Educational platform",
+      category: "full stack web application",
+      description: "Educational platform for students to learn and grow. It includes a dashboard for students to track their progress, a quiz section for students to test their knowledge, and a leaderboard for students to compete with their peers.",
+      technologies: ["Next.js", "Node.js", "payment gateway", "Supabase"],
       image: "https://readdy.ai/api/search-image?query=Mobile%20project%20management%20app%20interface%20on%20smartphone%2C%20task%20management%20screens%20with%20clean%20UI%2C%20collaborative%20workspace%20design%2C%20modern%20mobile%20app%20with%20purple%20and%20white%20theme&width=600&height=400&seq=mobile1&orientation=landscape",
-      results: ["4.8★ App Store rating", "Cross-platform compatibility", "Real-time collaboration"]
+      results: [ "Cross-platform compatibility", "Real-time collaboration"]
     },
     {
       id: 3,
@@ -102,6 +102,10 @@ export default function ProjectShowcase() {
                 {/* Example: Add a View Website button for the first project only. Replace with your real URLs as needed. */}
                 {project.id === 1 && (
                   <button className="btn primary" style={{marginTop: '1rem'}} onClick={() => setModalUrl('https://padhaixpress.in')}>View Website</button>
+                )}
+                {/* Add View Website button for the second project */}
+                {project.id === 2 && (
+                  <button className="btn primary" style={{marginTop: '1rem'}} onClick={() => setModalUrl('https://innovience.in')}>View Website</button>
                 )}
               </div>
             </div>
