@@ -27,23 +27,38 @@ export default function ContactSection() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitMessage('');
     
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitMessage('Thank you! We\'ll get back to you within 24 hours.');
-      setFormData({
-        name: '', 
-        email: '', 
-        company: '', 
-        projectType: '', 
-        budget: '', 
-        timeline: '', 
-        description: ''
+      // Send data to backend
+      const response = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      const result = await response.json();
+
+      if (response.ok && result.success) {
+        setSubmitMessage(result.message);
+        // Reset form on success
+        setFormData({
+          name: '', 
+          email: '', 
+          company: '', 
+          projectType: '', 
+          budget: '', 
+          timeline: '', 
+          description: ''
+        });
+      } else {
+        setSubmitMessage(result.message || 'Something went wrong. Please try again.');
+      }
     } catch (error) {
-      setSubmitMessage('Something went wrong. Please try again.');
+      console.error('Form submission error:', error);
+      setSubmitMessage('Network error. Please check your connection and try again.');
     }
     
     setIsSubmitting(false);
